@@ -27,7 +27,7 @@ class CreateTeamSerializer(serializers.ModelSerializer):
 class UpdateTeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ['id', 'name', 'owner', 'members']
+        fields = ['id', 'name', 'members']
 
     def validate(self, attrs):
         members = attrs.get('members') or []

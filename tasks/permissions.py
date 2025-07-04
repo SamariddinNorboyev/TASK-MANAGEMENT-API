@@ -10,4 +10,4 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
     
 class IsOwnerOrAssignedTo(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        return obj.assigned_to == request.user or obj.owner == request.user
+        return obj.assigned_to == request.user or obj.created_by == request.user
